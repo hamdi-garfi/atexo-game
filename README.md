@@ -1,2 +1,2 @@
 # atexo-game
-C'est une application de un jeu de cartes pour ATEXO.
+C'est une application de jeu de cartes pour ATEXO.
