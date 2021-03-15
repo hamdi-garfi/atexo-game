@@ -18,12 +18,7 @@ class User implements UserInterface
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="string", length=180, unique=true)
-     */
-    private $f;
-
+ 
     /**
      * @ORM\Column(type="json")
      */
@@ -48,18 +43,6 @@ class User implements UserInterface
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getF(): ?string
-    {
-        return $this->f;
-    }
-
-    public function setF(string $f): self
-    {
-        $this->f = $f;
-
-        return $this;
     }
 
     /**
