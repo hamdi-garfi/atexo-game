@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello !{% endblock %}
+{% block title %}Bonjour ATEXO !{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,11 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello ✅</h1>
+    <h1>ATEXO ✅</h1>
 
-    This friendly message is coming from:
+    Pour commencer veuillez lancer :
     <ul>
-        <li>Your controller at <code><a href="{{ '/home/garfi/apps/php/atexo-game/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/garfi/apps/php/atexo-game/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
+       bin/console carte:start
     </ul>
 </div>
 {% endblock %}
