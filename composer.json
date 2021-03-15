@@ -70,6 +70,7 @@
         }
     },
     "require-dev": {
-        "phpstan/phpstan-symfony": "^0.12.21"
+        "phpstan/phpstan-symfony": "^0.12.21",
+        "symfony/phpunit-bridge": "^5.2"
     }
 }

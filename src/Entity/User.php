@@ -62,7 +62,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->f;
+        return (string) $this->username;
     }
 
     /**
