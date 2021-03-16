@@ -2,24 +2,40 @@
 
 namespace App\Service;
 
+use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
+
+
 class CardGamesService
 {
 
-   /**
-    * Cette methode permet de construire un ordre aléatoire des couleurs.
-    * 
-    * @return string
-    */
-    public function createRandomColorOrder(): string
+    private array $randomcolor = [];
+    private array $valueCards = [];
+
+    public function __construct(string $randomcolor, string $valueCards)
     {
-        $messages = [
-            'You did it! You updated the system! Amazing!',
-            'That was one of the coolest updates I\'ve seen all day!',
-            'Great work! Keep going!',
-        ];
+        $this->randomcolor =  explode(",", $randomcolor);
+        $this->valueCards = explode(",", $valueCards);
+    }
 
-        $index = array_rand($messages);
+    /**
+     * Cette methode permet de construire un ordre aléatoire des couleurs.
+     * 
+     * @return string
+     */
+    public function generateRandomColorOrder(): string
+    {
+        $index = array_rand($this->randomcolor);
+        return $this->randomcolor[$index];
+    }
 
-        return $messages[$index];
+     /**
+     * Cette methode permet de construire un ordre aléatoire des couleurs.
+     * 
+     * @return string
+     */
+    public function generateValueCards(): string
+    {
+        $index = array_rand($this->valueCards);
+        return $this->valueCards[$index];
     }
 }
