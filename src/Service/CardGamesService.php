@@ -22,20 +22,36 @@ class CardGamesService
      * 
      * @return string
      */
-    public function generateRandomColorOrder(): string
+    public function generateRandomColorOrder(): ?string
     {
-        $index = array_rand($this->randomcolor);
+        $index = array_rand($this?->randomcolor);  // Null SAFE
         return $this->randomcolor[$index];
     }
 
-     /**
-     * Cette methode permet de construire un ordre aléatoire des couleurs.
+    /**
+     * Cette methode permet de construire des valeurs de jeu de cartes.
      * 
      * @return string
      */
-    public function generateValueCards(): string
+    public function generateValueCards(): ?string
     {
-        $index = array_rand($this->valueCards);
+        $index = array_rand($this?->valueCards);  // Null SAFE
         return $this->valueCards[$index];
+    }
+
+
+    /**
+     * Cette methode permet de générer des cartes d'une facon aléatoire
+     * 
+     * @return array
+     */
+    public function generateTenCards(int $nbrCards = 10): ?array
+    {
+        $cards = [];
+        for ($i = 0; $i < $nbrCards; $i++) {
+            $cards[] = [$this->generateRandomColorOrder() => $this->generateValueCards()];
+        }
+
+        return $cards;
     }
 }
