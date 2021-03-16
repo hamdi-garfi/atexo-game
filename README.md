@@ -27,12 +27,16 @@ docker-compose up --build
 ### Usage
 Lancer l'application sur http://localhost:8080
 
-
-
 Configuration
 Dans le fichier .env, remplissez les informations liées à la base de données que vous devez préalablement créer.
 
-Tests
+pour lancer les cartes : executer la commande :
+
+```bash
+$ bin/console carte:generate nbrCards=10
+```
+
+### Tests
 -----
 
 Exécutez cette commande pour lancer les tests
@@ -40,3 +44,4 @@ Exécutez cette commande pour lancer les tests
 ```bash
 $ cd my_project/
 $ ./bin/phpunit
+
