@@ -76,6 +76,6 @@ RUN composer install --no-interaction
 # For Laravel Installations
 #RUN php artisan key:generate
 
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["php-fpm"]
