@@ -49,7 +49,11 @@ class CardGamesService
     {
         $cards = [];
         for ($i = 0; $i < $nbrCards; $i++) {
-            $cards[] = [$this->generateRandomColorOrder() => $this->generateValueCards()];
+            $cards[] = [
+                "number" => $i + 1,
+                "color" => $this->generateRandomColorOrder(),
+                "value" => $this->generateValueCards()
+            ];
         }
 
         return $cards;
